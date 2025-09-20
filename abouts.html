@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NusaSejatra | Premium Blogger Templates</title>
+    <meta name="description" content="Pelajari lebih lanjut tentang NusaSejatra, platform terdepan untuk template Blogger premium di Indonesia. Tim, visi, dan komitmen kami untuk blogger Indonesia.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #0052FF;
+            --primary-dark: #0043D1;
+            --secondary: #FF6B35;
+            --accent: #00D4AA;
+            --dark: #0B0D17;
+            --dark-light: #1A1D29;
+            --gray: #64748B;
+            --gray-light: #F8FAFC;
+            --white: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #0052FF 0%, #0043D1 100%);
+            --gradient-accent: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 0.75rem 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 82, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, #A0A9FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .content-text strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Vision Mission Cards */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .vm-card.mission::before {
+            background: var(--gradient-accent);
+        }
+
+        .vm-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .vm-card.mission .vm-icon {
+            background: var(--gradient-accent);
+        }
+
+        .vm-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .vm-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .vm-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .vm-list li::before {
+            content: '✓';
+            background: var(--accent);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-desc {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 80px;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-desc {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .timeline-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .timeline-list li::before {
+            content: '▶';
+            color: var(--primary);
+            font-size: 0.75rem;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .team-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-quote {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .team-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: -5px;
+        }
+
+        .team-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .value-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .value-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--gray-light);
+            padding: 60px 0;
+            margin: 4rem 0;
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0;
+            margin: 4rem 0;
+            border-radius: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .vision-mission { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .nav-menu { display: none; }
+            .timeline { margin-left: 1rem; }
+            .timeline-item { padding-left: 60px; }
+            .timeline::before { left: 20px; }
+            .timeline-year { left: -10px; width: 50px; height: 50px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+
+        /* Scroll animations */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">N</div>
+                NusaSejatra
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#templates" class="nav-cta">Browse Templates</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Tentang NusaSejatra</h1>
+            <p class="page-subtitle">Platform terdepan untuk template Blogger premium di Indonesia, memberdayakan setiap blogger untuk menciptakan presence digital yang powerful.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- About Section -->
+            <section class="section animate-in">
+                <h2 class="section-title">Siapa Kami</h2>
+                <p class="content-text">
+                    <strong>NusaSejatra</strong> adalah platform terdepan di Indonesia yang mengkhususkan diri dalam penyediaan template Blogger premium berkualitas internasional. Didirikan pada tahun 2020, kami lahir dari passion untuk membantu blogger Indonesia tampil lebih profesional dan kompetitif di era digital.
+                </p>
+                <p class="content-text">
+                    Kami memahami tantangan blogger Indonesia dalam menciptakan konten yang menarik sekaligus membangun brand personal yang kuat. Oleh karena itu, setiap template yang kami ciptakan tidak hanya indah secara visual, tetapi juga dioptimasi untuk performa, SEO, dan user experience terbaik.
+                </p>
+            </section>
+
+            <!-- Vision & Mission -->
+            <section class="section animate-in">
+                <h2 class="section-title">Visi & Misi Kami</h2>
+                <div class="vision-mission">
+                    <div class="vm-card">
+                        <div class="vm-icon">🎯</div>
+                        <h3 class="vm-title">Visi Kami</h3>
+                        <p class="content-text">Menjadi platform template terpercaya yang memberdayakan setiap blogger Indonesia untuk menciptakan presence digital yang powerful dan menghasilkan income yang berkelanjutan.</p>
+                    </div>
+                    <div class="vm-card mission">
+                        <div class="vm-icon">🚀</div>
+                        <h3 class="vm-title">Misi Kami</h3>
+                        <ul class="vm-list">
+                            <li>Menyediakan template premium dengan design modern dan fungsionalitas terdepan</li>
+                            <li>Mendukung ekosistem blogger Indonesia dengan tools dan resources berkualitas tinggi</li>
+                            <li>Memberikan edukasi tentang blogging, SEO, dan digital marketing</li>
+                            <li>Menciptakan community blogger yang saling mendukung dan berkembang bersama</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="section animate-in">
+                <h2 class="section-title">Mengapa Memilih NusaSejatra?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🎨</span>
+                        <h3 class="feature-title">Design Excellence</h3>
+                        <p class="feature-desc">Setiap template dirancang oleh tim designer berpengalaman dengan standar internasional, mengikuti tren terkini dalam web design.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3 class="feature-title">Performance First</h3>
+                        <p class="feature-desc">Template kami dioptimasi untuk loading speed dan SEO menggunakan clean code dan best practices terbaru.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🇮🇩</span>
+                        <h3 class="feature-title">Made for Indonesia</h3>
+                        <p class="feature-desc">Disesuaikan dengan konten berbahasa Indonesia, kultur lokal, dan preferensi audience domestic.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🛠️</span>
+                        <h3 class="feature-title">Complete Solution</h3>
+                        <p class="feature-desc">Tidak hanya template, kami menyediakan installation service, customization support, dan consultation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Journey Timeline -->
+            <section class="section animate-in">
+                <h2 class="section-title">Perjalanan Kami</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Genesis</h3>
+                            <p class="timeline-desc">Memulai perjalanan dengan visi mengubah landscape blog Indonesia</p>
+                            <ul class="timeline-list">
+                                <li>Launched dengan 10 template premium pertama</li>
+                                <li>Focus pada niche lifestyle dan food blogging</li>
+                                <li>100+ customers dalam 6 bulan pertama</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Growth</h3>
+                            <p class="timeline-desc">Ekspansi dan peningkatan layanan untuk memenuhi kebutuhan pasar</p>
+                            <ul class="timeline-list">
+                                <li>Expansion ke berbagai niche: tech, beauty, travel, business</li>
+                                <li>Launching custom development service</li>
+                                <li>Partnership dengan top Indonesian bloggers</li>
+                                <li>1000+ happy customers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Innovation</h3>
+                            <p class="timeline-desc">Mengadopsi teknologi terbaru dan pendekatan inovatif</p>
+                            <ul class="timeline-list">
+                                <li>Introducing AI-powered template customization</li>
+                                <li>Mobile-first design approach</li>
+                                <li>Advanced SEO features integration</li>
+                                <li>Community building initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Leadership</h3>
+                            <p class="timeline-desc">Menjadi market leader dan membangun ekosistem blogger</p>
+                            <ul class="timeline-list">
+                                <li>Market leader dengan 5000+ customers</li>
+                                <li>Launching NusaSejatra Academy</li>
+                                <li>Mentoring program untuk new bloggers</li>
+                                <li>International recognition</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Evolution</h3>
+                            <p class="timeline-desc">Melangkah ke masa depan dengan teknologi dan visi terdepan</p>
+                            <ul class="timeline-list">
+                                <li>AI-assisted content creation tools</li>
+                                <li>Advanced analytics integration</li>
+                                <li>Multi-platform template support</li>
+                                <li>Global expansion planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="section animate-in">
+                <h2 class="section-title">Tim Kami</h2>
+                <p class="content-text">Bertemu dengan profesional berpengalaman yang berdedikasi menciptakan template terbaik untuk Anda</p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">AR</div>
+                        <h3 class="team-name">Ahmad Rizki</h3>
+                        <p class="team-role">Founder & Creative Director</p>
+                        <p class="team-quote">Blogging mengubah hidup saya, dan saya ingin membantu blogger lain mencapai kesuksesan yang sama.</p>
+                        <p class="team-desc">10+ tahun experience di web design & digital marketing. Ex-Creative Director di agency terkemuka Jakarta. Mentor di berbagai startup accelerator.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">SP</div>
+                        <h3 class="team-name">Sari Pertiwi</h3>
+                        <p class="team-role">CTO & Lead Developer</p>
+                        <p class="team-quote">Technology should empower creativity, not limit it.</p>
+                        <p class="team-desc">Full-stack developer dengan expertise di frontend optimization. Ex-Senior Developer di unicorn startup Indonesia. Google Developer Expert for Web Technologies.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">BH</div>
+                        <h3 class="team-name">Budi Hartono</h3>
+                        <p class="team-role">Head of Design</p>
+                        <p class="team-quote">Good design is invisible - it just works beautifully.</p>
+                        <p class="team-desc">UI/UX Designer dengan portfolio internasional. Winner of multiple design awards. Specialist dalam conversion-focused design.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">DN</div>
+                        <h3 class="team-name">Dewi Nurhaliza</h3>
+                        <p class="team-role">Customer Success Manager</p>
+                        <p class="team-quote">Customer happiness is our greatest achievement.</p>
+                        <p class="team-desc">8+ tahun experience dalam customer relationship. Expert dalam blogger community building. Available 24/7 untuk customer support.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="section animate-in">
+                <h2 class="section-title">Nilai-Nilai Kami</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-emoji">🎯</span>
+                        <h3 class="value-title">Excellence</h3>
+                        <p class="feature-desc">Kami tidak pernah berkompromi dengan kualitas. Setiap template melalui rigorous testing dan quality assurance process.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-emoji">🤝</span>
+                        <h3 class="value-title">Integrity</h3>
+                        <p class="feature-desc">Transparansi dalam pricing, honest marketing, dan commitment terhadap customer satisfaction adalah prioritas utama.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-emoji">💡</span>
+                        <h3 class="value-title">Innovation</h3>
+                        <p class="feature-desc">Selalu mengadopsi teknologi terbaru dan mengantisipasi tren masa depan dalam web development.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-emoji">🌱</span>
+                        <h3 class="value-title">Growth</h3>
+                        <p class="feature-desc">Tidak hanya mengembangkan bisnis, tapi juga berkontribusi pada pertumbuhan industri blogging Indonesia.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-emoji">❤️</span>
+                        <h3 class="value-title">Community</h3>
+                        <p class="feature-desc">Membangun ecosystem yang supportive dimana setiap blogger bisa belajar, berkembang, dan sukses bersama.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="section animate-in">
+                <div class="stats-section">
+                    <div class="container">
+                        <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Numbers That Matter</h2>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Premium Templates</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">10K+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">99.5%</div>
+                                <div class="stat-label">Satisfaction Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Premium Support</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">< 2s</div>
+                                <div class="stat-label">Loading Speed</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">5★</div>
+                                <div class="stat-label">Average Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards & Recognition -->
+            <section class="section animate-in">
+                <h2 class="section-title">Pencapaian & Pengakuan</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🏆</span>
+                        <h3 class="feature-title">Awards & Recognition</h3>
+                        <p class="feature-desc">Best Blogger Template Provider 2023 - Indonesian Digital Awards. Startup of the Year 2022 - TechInAsia Category.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📺</span>
+                        <h3 class="feature-title">Media Coverage</h3>
+                        <p class="feature-desc">Featured di Kompas, Detik, Tempo sebagai pioneer template industry. Interview di MetroTV dan TVOne.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎙️</span>
+                        <h3 class="feature-title">Industry Speaker</h3>
+                        <p class="feature-desc">Podcast guest di Deddy Corbuzier, Raditya Dika membahas blogging monetization dan digital entrepreneurship.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Environmental Commitment -->
+            <section class="section animate-in">
+                <h2 class="section-title">Komitmen Terhadap Lingkungan</h2>
+                <p class="content-text">
+                    Sebagai perusahaan technology, kami sadar akan impact terhadap lingkungan. Kami berkomitmen untuk sustainability melalui berbagai inisiatif:
+                </p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">☁️</span>
+                        <h3 class="feature-title">Carbon Neutral Hosting</h3>
+                        <p class="feature-desc">Semua server menggunakan renewable energy untuk meminimalkan carbon footprint.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📱</span>
+                        <h3 class="feature-title">Paperless Operations</h3>
+                        <p class="feature-desc">100% digital documentation dan communication untuk mengurangi penggunaan kertas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌳</span>
+                        <h3 class="feature-title">Tree Planting Program</h3>
+                        <p class="feature-desc">1 pohon ditanam untuk setiap template terjual sebagai kontribusi untuk reforestasi.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🏠</span>
+                        <h3 class="feature-title">Remote-First Culture</h3>
+                        <p class="feature-desc">Mengurangi carbon footprint dari commuting dengan work from home policy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section animate-in">
+                <div class="contact-section">
+                    <div class="container">
+                        <h2 class="section-title" style="text-align: center; color: white; margin-bottom: 3rem;">Get in Touch</h2>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <h4>🏢 Headquarters</h4>
+                                <p>NusaSejatra Digital Solutions<br>
+                                Jl. Sudirman No. 123, Jakarta Pusat<br>
+                                DKI Jakarta 10220, Indonesia</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>📞 Contact Info</h4>
+                                <p>Email: <a href="mailto:hello@nusasejatra.com">hello@nusasejatra.com</a><br>
+                                Phone: <a href="tel:+622112345678">+62 21 1234 5678</a><br>
+                                WhatsApp: <a href="https://wa.me/6281234567890">+62 812 3456 7890</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>💬 Support</h4>
+                                <p>Live Chat: Available 24/7 di website<br>
+                                Support Portal: support.nusasejatra.com<br>
+                                Response Time: < 2 hours</p>
+                            </div>
+                            <div class="contact-item">
+                                <h4>🌐 Follow Us</h4>
+                                <div class="social-links">
+                                    <a href="#" class="social-link">📘</a>
+                                    <a href="#" class="social-link">📷</a>
+                                    <a href="#" class="social-link">🐦</a>
+                                    <a href="#" class="social-link">💼</a>
+                                    <a href="#" class="social-link">📺</a>
+                                </div>
+                                <p style="margin-top: 1rem;">@nusasejatra.official</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="section animate-in">
+                <div class="cta-section">
+                    <div class="container">
+                        <h2 class="cta-title">Ready to Transform Your Blog?</h2>
+                        <p class="cta-desc">Bergabunglah dengan ribuan blogger Indonesia yang sudah mempercayai NusaSejatra</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn-primary">🎨 Browse Templates</a>
+                            <a href="#" class="btn-secondary">💬 Contact Us</a>
+                            <a href="#" class="btn-secondary">📚 Resources</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Enhanced navbar behavior
+        const navbar = document.getElementById('navbar');
+        let lastScrollY = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Hide/show navbar on scroll
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const slideInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    slideInObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.animate-in').forEach(el => {
+            slideInObserver.observe(el);
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const isPercentage = target.includes('%');
+                const isTime = target.includes('s');
+                const isRating = target.includes('★');
+                const numericTarget = parseInt(target.replace(/\D/g, ''));
+                
+                let suffix = '';
+                if (isPercentage) suffix = '%';
+                else if (target.includes('K')) suffix = 'K+';
+                else if (target.includes('+')) suffix = '+';
+                else if (isTime) suffix = 's';
+                else if (isRating) suffix = '★';
+                else if (target.includes('/')) suffix = '/7';
+                
+                if (target.includes('< 2s')) {
+                    counter.textContent = '< 2s';
+                    return;
+                }
+                
+                let current = 0;
+                const increment = numericTarget / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= numericTarget) {
+                        counter.textContent = numericTarget + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Add subtle parallax effect to header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.page-header');
+            if (header) {
+                const speed = scrolled * 0.5;
+                header.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.feature-card, .team-card, .value-card, .vm-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Timeline animation
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-30px)';
+            item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            timelineObserver.observe(item);
+        });
+
+        console.log('🚀 NusaSejatra About page loaded successfully!');
+    </script>
+</body>
+</html>
